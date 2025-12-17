@@ -1,10 +1,10 @@
 import streamlit as st
-import pickle
+import JOBLIB
 import numpy as np
 
 # Load the trained model
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
+#with open('model.pkl', 'rb') as file:
+    model = JOBLIB.load(file)
 
 # App title
 st.title("🩺 Logistic Regression Diabetes Prediction App")
@@ -35,3 +35,4 @@ if st.button("Predict"):
         st.error("The person is **diabetic**")
     else:
         st.success("The person is **not diabetic**")
+
